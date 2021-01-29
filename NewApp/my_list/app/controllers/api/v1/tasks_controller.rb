@@ -24,8 +24,6 @@ class Api::V1::TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
     if @task
-      # render json: @task, :include => :tags
-            # render json: => @task, :include :tags
       tags = @task.tags
       render :json => @task.to_json(:include => [:tags])
     else
@@ -33,37 +31,37 @@ class Api::V1::TasksController < ApplicationController
     end
   end
 
-  # def edit
-  #   task = Task.find(params[:id])
-  #   if task
-  #     render json: task
+  def edit
+    task = Task.find(params[:id])
+    if task
+      render json: task
+    else
+      render json: task.errors
+    end
+  end
+
+  # def update
+  #   @task = Task.find(params[:id])
+
+  #   if @task.update(task_params)
+  #     render json: @task
   #   else
-  #     render json: task.errors
+  #     render :edit
   #   end
   # end
 
-  def edit
-    @task = Task.find(params[:id]);
+  def update
+    @task = Task.find(params[:id])
+    @task.tags.clear;
     tag_list = params[:tags]
     tag_list.each do |tag_id|
       @tag = Tag.find(tag_id)
       @task.tags << @tag
     end
-    if @task
-      # render json: => @task, :include :tags
-      # {render :json => @task.to_json(:include => [:tags])}
-      tags = @task.tags
-      render :json => @task.to_json(:include => [:tags])
-    else
-      render json: @task.errors
-    end
-  end
-
-  def update
-    @task = Task.find(params[:id])
 
     if @task.update(task_params)
-      render json: @task
+      tags = @task.tags
+      render :json => @task.to_json(:include => [:tags])
     else
       render :edit
     end
