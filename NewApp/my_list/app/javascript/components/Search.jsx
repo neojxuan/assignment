@@ -83,7 +83,6 @@ class Search extends React.Component {
   }
   
   render() {
-      // Search
     const arr_tags = this.state.all_tags;
     const display_tags = arr_tags.map((tag) => (
       <Fragment>
@@ -91,32 +90,25 @@ class Search extends React.Component {
         <label for={tag.id}>{tag.name}</label>
       </Fragment>
     ));
-    
-    if(this.state.tasks.length > 0) {
-        const returned_tasks = this.state.tasks[0];
-        this.state.tasks_to_display = JSON.parse(JSON.stringify(returned_tasks));
-        // console.log(this.state.tasks_to_display.length);
-    }
-
-    // console.log("tasks: ", n);
-        const allTasks = this.state.tasks_to_display.map((task, index) => (
-            <div key={index} className="col-md-6 col-lg-4">
-              <div className="card mb-4">
-                <div className="card-body">
-                  <h5 className="card-title">{task.title}</h5>
-                  <Link to={`/task/${task.id}`} className="btn custom-button">
-                    View Task
-                  </Link>
-                  <Link to={`/task/edit/${task.id}`} className="btn custom-button">
-                    Edit Task
-                  </Link>
-                  <div className="btn custom-button" onClick={() => this.deleteTask(task.id)}>
-                    Delete Task
-                  </div>
+    // const remove_duplicates = this.state.tasks.filter(x => );
+    const allTasks = this.state.tasks.map((task, index) => (
+        <div key={index} className="col-md-6 col-lg-4">
+            <div className="card mb-4">
+            <div className="card-body">
+                <h5 className="card-title">{task.title}</h5>
+                <Link to={`/task/${task.id}`} className="btn custom-button">
+                View Task
+                </Link>
+                <Link to={`/task/edit/${task.id}`} className="btn custom-button">
+                Edit Task
+                </Link>
+                <div className="btn custom-button" onClick={() => this.deleteTask(task.id)}>
+                Delete Task
                 </div>
-              </div>
             </div>
-          ));
+            </div>
+        </div>
+        ));
 
     const noTask = (
       <div className="vw-100 vh-50 d-flex justify-content-center">
@@ -136,11 +128,11 @@ class Search extends React.Component {
         <div className="Search">
           {display_tags}
         </div>
-        <div>{this.state.tasks_to_display.length > 0 ? allTasks : noTask}</div>
+        <div>{this.state.tasks.length > 0 ? allTasks : noTask}</div>
         <button type="submit" className="btn custom-button mt-3" onClick={(e) => this.onSubmit(e)}>
           Search Tasks
         </button>
-        {/* <div>{JSON.stringify(this.state.tasks_to_display)}</div> */}
+        <div>{JSON.stringify(this.state.tasks)}</div>
         <div className="py-5">
           <main className="container">
             <Link to="/" className="btn btn-link">

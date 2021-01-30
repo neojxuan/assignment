@@ -61,18 +61,20 @@ class Tasks extends React.Component {
   render() {
     const { tasks } = this.state;
     const allTasks = tasks.map((task, index) => (
-      <div key={index} className="col-md-6 col-lg-4">
+      <div key={index} className="w-100">
         <div className="card mb-4">
           <div className="card-body">
-            <h5 className="card-title">{task.title}</h5>
-            <Link to={`/task/${task.id}`} className="btn custom-button">
-              View Task
-            </Link>
-            <Link to={`/task/edit/${task.id}`} className="btn custom-button">
-              Edit Task
-            </Link>
-            <div className="btn custom-button" onClick={() => this.deleteTask(task.id)}>
-              Delete Task
+            <h5>{task.title}</h5>
+            <div className="float-right">
+              <Link to={`/task/${task.id}`} className="btn custom-button">
+                View Task
+              </Link>
+              <Link to={`/task/edit/${task.id}`} className="btn custom-button">
+                Edit Task
+              </Link>
+              <div className="btn custom-button" onClick={() => this.deleteTask(task.id)}>
+                Delete Task
+              </div>
             </div>
           </div>
         </div>

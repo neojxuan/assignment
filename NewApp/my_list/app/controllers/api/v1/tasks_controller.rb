@@ -38,16 +38,6 @@ class Api::V1::TasksController < ApplicationController
     end
   end
 
-  # def update
-  #   @task = Task.find(params[:id])
-
-  #   if @task.update(task_params)
-  #     render json: @task
-  #   else
-  #     render :edit
-  #   end
-  # end
-
   def update
     @task = Task.find(params[:id])
     @task.tags.clear;
@@ -76,9 +66,12 @@ class Api::V1::TasksController < ApplicationController
     tag_list.each do |tag_id|
       @tag = Tag.find(tag_id)
       @tasks = @tag.tasks
-      to_show << @tasks
-      # logger.debug @tasks
-      # logger.debug to_show
+      # to_show << @tasks
+      @tasks.each do |task|
+        unless to_show.include?(task)
+          to_show << task
+        end
+      end 
     end
     render json: to_show
   end

@@ -45,7 +45,7 @@ class Task extends React.Component {
     const arr_tag_objects = JSON.parse(JSON.stringify(task.tags));
     const display_tags = arr_tag_objects.map((tag) => (
           <Fragment>
-            <button type="button">{tag.name}</button>
+            <div className="btn tag-button">{tag.name}</div>
           </Fragment>
         ));
     return (
