@@ -111,7 +111,7 @@ class Search extends React.Component {
         ));
 
     const noTask = (
-      <div className="vw-100 vh-50 d-flex justify-content-center">
+      <div className="my-margin mb-3 vw-100 vh-50 d-flex justify-content-center py-5">
         <h4>
           No tasks selected yet.
         </h4>
@@ -129,12 +129,16 @@ class Search extends React.Component {
           {display_tags}
         </div>
         <div>{this.state.tasks.length > 0 ? allTasks : noTask}</div>
+        <br></br>
+        <p>
         <div className="container">
           <button type="submit" className="btn custom-button" onClick={(e) => this.onSubmit(e)}>
             Search
           </button>
           <button type="button" className="btn custom-button" value="reload page" onClick={() => this.props.history.go(0)()}>Clear Search</button>
+        
         </div>
+        </p>
         <div className="py-5">
           <main className="container">
             <Link to="/" className="btn btn-link">

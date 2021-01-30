@@ -71,3 +71,10 @@
     border: none;
     margin: 2px;
   }
+  .customhr {
+    color:rgb(105, 156, 116);
+    border-width: 3px;
+  }
+  .my-margin{
+    margin-left: 100px;
+  }

@@ -19,6 +19,7 @@ export default (
       <Route path="/task/edit/:id" exact component={NewTask} />
       <Route path="/tag" exact component={NewTag} />
       <Route path="/tags" exact component={Tags} />
+      <Route path="/tag/edit/:id" exact component={NewTag} />
     </Switch>
   </Router>
 );

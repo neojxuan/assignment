@@ -19,7 +19,7 @@ class NewTask extends React.Component {
     const path = location.pathname;
     console.log(path);
     if(this.isPathEdit(path)) {
-        const url = `/api/v1/tags/edit/:id${match.params.id}`;
+        const url = `/api/v1/tag/edit/${match.params.id}`;
         fetch(url)
         .then(response => {
           if (response.ok) {
@@ -27,13 +27,13 @@ class NewTask extends React.Component {
           }
           throw new Error("Network response was not ok.");
         })
-        .then(response => this.setState({ title: response.title, details: response.details }))
+        .then(response => this.setState({ name: response.name }))
         .catch((err) => console.error(err));
     }
 
   }
 
-  isPathEdit = (path) => path.startsWith("/tags/edit");
+  isPathEdit = (path) => path.startsWith("/tag/edit");
 
   stripHtmlEntities(str) {
     return String(str)
@@ -52,7 +52,7 @@ class NewTask extends React.Component {
     event.preventDefault();
     const {location, match} = this.props;
     const path = location.pathname;
-    const url = `/api/v1/tags/${this.isPathEdit(path) ? `update/${match.params.id}` : 'create' }`;
+    const url = `/api/v1/tag/${this.isPathEdit(path) ? `update/${match.params.id}` : 'create' }`;
     const { name } = this.state;
   
     if (name.length == 0) {
@@ -80,7 +80,7 @@ class NewTask extends React.Component {
       }
       throw new Error("Network response was not ok.");
       })
-      .then(response => this.props.history.push("/tasks"))
+      .then(response => this.props.history.push("/tags"))
       .catch(error => console.log(error.message));
   }
 
@@ -92,7 +92,7 @@ class NewTask extends React.Component {
             <div className="row">
               <div className="col-sm-12 col-lg-6 offset-lg-3">
                 <h1 className="font-weight-normal mb-5">
-                  Add a new tag.
+                  {this.isPathEdit(this.props.location.pathname) ? 'Update tag' : 'Add a new tag'}
                 </h1>
                 <form onSubmit={this.onSubmit}>
                   <div className="form-group">

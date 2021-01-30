@@ -50,7 +50,7 @@ class Tags extends React.Component {
       <div key={index} className="col-md-6 col-lg-4">
         <div className="card mb-4">
           <div className="card-body">
-            <h5 className="card-title">{tag.name}</h5>
+            <h4 className="card-title">{tag.name}</h4>
             <Link to={`/tag/edit/${tag.id}`} className="btn custom-button">
               Edit Tag
             </Link>
@@ -64,7 +64,7 @@ class Tags extends React.Component {
     const noTag = (
       <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
         <h4>
-          No tags yet. Why not <Link to="/new_tag">create one</Link>
+          No tags yet. Why not <Link to="/tag">create one</Link>
         </h4>
       </div>
     );

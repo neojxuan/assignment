@@ -64,7 +64,7 @@ class Tasks extends React.Component {
       <div key={index} className="w-100">
         <div className="card mb-4">
           <div className="card-body">
-            <h5>{task.title}</h5>
+            <h4>{task.title}</h4>
             <div className="float-right">
               <Link to={`/task/${task.id}`} className="btn custom-button">
                 View Task
@@ -78,6 +78,7 @@ class Tasks extends React.Component {
             </div>
           </div>
         </div>
+        <hr className="customhr" />
       </div>
     ));
     const noTask = (

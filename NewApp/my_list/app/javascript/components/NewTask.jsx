@@ -124,7 +124,7 @@ class NewTask extends React.Component {
         const display_tags = arr_tags.map((tag) => (
             <Fragment>
               <input type="checkbox" id={tag.id} name={tag.id} value={tag.id} onChange={this.tagChange}/>
-              <label for={tag.id}>{tag.name}</label>
+              <label for={tag.id} className="btn tag-button">{tag.name}</label>
             </Fragment>
           ));
         return (
@@ -132,7 +132,7 @@ class NewTask extends React.Component {
             <div className="row">
               <div className="col-sm-12 col-lg-6 offset-lg-3">
                 <h1 className="font-weight-normal mb-5">
-                  Add a new task.
+                  {this.isPathEdit(this.props.location.pathname) ? 'Update task' : 'Add a new task'}
                 </h1>
                 <form onSubmit={this.onSubmit}>
                   <div className="form-group">
@@ -161,7 +161,6 @@ class NewTask extends React.Component {
                   </div>
 
                   <div>{display_tags}</div>
-
 
                   <button type="submit" className="btn custom-button mt-3">
                     {`${this.isPathEdit(this.props.location.pathname) ? 'Update' : 'Create'} Task`}

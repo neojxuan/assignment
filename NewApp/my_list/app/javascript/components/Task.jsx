@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Task extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {task:{title:"test", details:"HELPMEPLSPLSPLSS", tags:[]}};
+    this.state = {task:{title:"", details:"", tags:[]}};
 
     this.addHtmlEntities = this.addHtmlEntities.bind(this);
   }
@@ -49,7 +49,7 @@ class Task extends React.Component {
           </Fragment>
         ));
     return (
-      <div className="parent element for render">
+      <div className="ml-5">
         <h1>{task.title}</h1>
         <p>Details: {task.details}</p>
         <div>{display_tags}</div>
