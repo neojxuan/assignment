@@ -49,10 +49,13 @@ class Task extends React.Component {
           </Fragment>
         ));
     return (
-      <div className="ml-5">
+      <div className="my-margin">
         <h1>{task.title}</h1>
         <p>Details: {task.details}</p>
         <div>{display_tags}</div>
+        <Link to="/tasks" className="btn btn-link">
+          Back to Tasks
+        </Link>
       </div>
     );
   }
