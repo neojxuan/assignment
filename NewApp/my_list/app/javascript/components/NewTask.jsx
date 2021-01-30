@@ -33,8 +33,7 @@ class NewTask extends React.Component {
         .catch((err) => console.error(err));
     }
     
-    // testing after here
-    // empty array of tags in constructor
+    // get all tags and store in state
     const new_url = "/api/v1/tags/index";
     fetch(new_url)
       .then(response => {
@@ -161,7 +160,7 @@ class NewTask extends React.Component {
                     />
                   </div>
 
-                      <div>{display_tags}</div>
+                  <div>{display_tags}</div>
 
 
                   <button type="submit" className="btn custom-button mt-3">

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get '/edit/:id', to: 'tasks#edit'
       put 'tasks/update/:id', to: 'tasks#update'
       delete 'tasks/delete/:id', to: 'tasks#destroy'
+      post 'tasks/search', to: 'tasks#search'
     end
   end
   root 'homepage#index'

@@ -12,8 +12,6 @@ class Api::V1::TasksController < ApplicationController
       @task.tags << @tag
     end
     if @task
-      # render json: => @task, :include :tags
-      # {render :json => @task.to_json(:include => [:tags])}
       tags = @task.tags
       render :json => @task.to_json(:include => [:tags])
     else
@@ -70,6 +68,19 @@ class Api::V1::TasksController < ApplicationController
   def destroy
     find_task&.destroy
     render json: {message: 'Task deleted'}
+  end
+
+  def search
+    tag_list = params[:selected_tags]
+    to_show = []
+    tag_list.each do |tag_id|
+      @tag = Tag.find(tag_id)
+      @tasks = @tag.tasks
+      to_show << @tasks
+      # logger.debug @tasks
+      # logger.debug to_show
+    end
+    render json: to_show
   end
 
   private

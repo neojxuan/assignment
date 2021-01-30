@@ -6,6 +6,7 @@ import Task from "../components/Task";
 import NewTask from "../components/NewTask";
 import NewTag from "../components/NewTag";
 import Tags from "../components/Tags";
+import Search from "../components/Search";
 
 export default (
   <Router>
@@ -13,6 +14,7 @@ export default (
       <Route path="/" exact component={Home} />
       <Route path="/tasks" exact component={Tasks} />
       <Route path="/task/:id" exact component={Task} />
+      <Route path="/tasks/search" exact component={Search} />
       <Route path="/task" exact component={NewTask} />
       <Route path="/task/edit/:id" exact component={NewTask} />
       <Route path="/tag" exact component={NewTag} />

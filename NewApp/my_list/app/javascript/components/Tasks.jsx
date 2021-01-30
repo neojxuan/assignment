@@ -1,11 +1,12 @@
-import React from "react";
+import React, {Fragment} from "react";
 import { Link } from "react-router-dom";
 
 class Tasks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: []
+      tasks: [],
+      all_tags: [],
     };
   }
 
@@ -20,6 +21,19 @@ class Tasks extends React.Component {
       })
       .then(response => this.setState({ tasks: response }))
       .catch(() => this.props.history.push("/"));
+
+    // get all tags and store in state for search
+    const new_url = "/api/v1/tags/index";
+    fetch(new_url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network response was not ok.");
+      })
+      .then(response => this.setState({ all_tags: response }))
+      .catch(() => this.props.history.push("/"));
+      console.log(this.state);
   }
 
   deleteTask = (id) => {
@@ -71,9 +85,14 @@ class Tasks extends React.Component {
         </h4>
       </div>
     );
-
+    
     return (
       <>
+        <div className="Search">
+          <Link to="/tasks/search" className="btn custom-button">
+            Search by Tag
+          </Link>
+        </div>
         <section className="text-center">
           <div className="container py-5">
             <h1 className="display-4">To-Do List</h1>
@@ -98,6 +117,7 @@ class Tasks extends React.Component {
             </Link>
           </main>
         </div>
+        {/* <div>{JSON.stringify(tasks)}</div> */}
       </>
     );
   }
