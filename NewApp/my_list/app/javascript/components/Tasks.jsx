@@ -90,11 +90,6 @@ class Tasks extends React.Component {
     
     return (
       <>
-        <div className="Search">
-          <Link to="/tasks/search" className="btn custom-button">
-            Search by Tag
-          </Link>
-        </div>
         <section className="text-center">
           <div className="container py-5">
             <h1 className="display-4">To-Do List</h1>
@@ -102,14 +97,17 @@ class Tasks extends React.Component {
         </section>
         <div className="py-5">
           <main className="container">
-              <Link to="/tags" className="btn custom-button">
+            <div className="text-right mb-3">
+            <Link to="/tags" className="btn green1">
                 View All Tags
               </Link>
-            <div className="text-right mb-3">
-              <Link to="/task" className="btn custom-button">
+            <Link to="/tasks/search" className="btn green2">
+                Search by Tag
+              </Link>
+              <Link to="/task" className="btn green3">
                 Create New Task
               </Link>
-              <Link to="/tag" className="btn custom-button">
+              <Link to="/tag" className="btn green4">
                 Create New Tag
               </Link>
             </div>
@@ -119,7 +117,6 @@ class Tasks extends React.Component {
             </Link>
           </main>
         </div>
-        {/* <div>{JSON.stringify(tasks)}</div> */}
       </>
     );
   }

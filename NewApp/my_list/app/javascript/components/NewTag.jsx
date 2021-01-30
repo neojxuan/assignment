@@ -80,7 +80,7 @@ class NewTask extends React.Component {
       }
       throw new Error("Network response was not ok.");
       })
-      .then(response => this.props.history.push(`/tag/${response.id}`))
+      .then(response => this.props.history.push("/tasks"))
       .catch(error => console.log(error.message));
   }
 

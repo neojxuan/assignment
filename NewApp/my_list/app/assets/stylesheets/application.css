@@ -42,8 +42,32 @@
     opacity: 0.4;
   }
   .tag-button.btn {
-    background-color: #ebe044;
+    background-color: #f0ea96;
     color: rgb(3, 87, 21);
+    border: none;
+    margin: 2px;
+  }
+  .green1.btn {
+    background-color: #61B668;
+    color: #FFF;
+    border: none;
+    margin: 2px;
+  }
+  .green2.btn {
+    background-color: #47924F;
+    color: #FFF;
+    border: none;
+    margin: 2px;
+  }
+  .green3.btn {
+    background-color: #306E38;
+    color: #FFF;
+    border: none;
+    margin: 2px;
+  }
+  .green4.btn {
+    background-color: #1D4A24;
+    color: #FFF;
     border: none;
     margin: 2px;
   }

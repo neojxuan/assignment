@@ -87,7 +87,7 @@ class Search extends React.Component {
     const display_tags = arr_tags.map((tag) => (
       <Fragment>
         <input type="checkbox" key={tag.id} id={tag.id} name={tag.id} value={tag.id} onChange={this.tagChange}/>
-        <label for={tag.id}>{tag.name}</label>
+        <label for={tag.id} className="btn tag-button">{tag.name}</label>
       </Fragment>
     ));
     // const remove_duplicates = this.state.tasks.filter(x => );
@@ -121,18 +121,20 @@ class Search extends React.Component {
       <>
         <section className="text-center">
           <div className="container py-5">
-            <h1 className="display-4">Tasks</h1>
+            <h1 className="display-4">Search Tasks</h1>
           </div>
         </section>
 
-        <div className="Search">
+        <div className="container">
           {display_tags}
         </div>
         <div>{this.state.tasks.length > 0 ? allTasks : noTask}</div>
-        <button type="submit" className="btn custom-button mt-3" onClick={(e) => this.onSubmit(e)}>
-          Search Tasks
-        </button>
-        <div>{JSON.stringify(this.state.tasks)}</div>
+        <div className="container">
+          <button type="submit" className="btn custom-button" onClick={(e) => this.onSubmit(e)}>
+            Search
+          </button>
+          <button type="button" className="btn custom-button" value="reload page" onClick={() => this.props.history.go(0)()}>Clear Search</button>
+        </div>
         <div className="py-5">
           <main className="container">
             <Link to="/" className="btn btn-link">
@@ -140,8 +142,6 @@ class Search extends React.Component {
             </Link>
           </main>
         </div>
-
-        <button type="button" value="reload page" onClick={() => this.props.history.go(0)()}>Clear Search</button>
       </>
     );
   }
