@@ -78,7 +78,7 @@ class Tasks extends React.Component {
             </div>
           </div>
         </div>
-        <hr className="customhr" />
+        
       </div>
     ));
     const noTask = (
