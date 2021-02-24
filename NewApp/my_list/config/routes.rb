@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       get 'tags/index'
       get 'tags/show'
       get 'tag/edit/:id', to: 'tags#edit'
-      put 'tag/update/:id', to: 'tags#update'
+      put 'tags/update/:id', to: 'tags#update'
       delete 'tags/delete/:id', to: 'tags#destroy'
     end
   end

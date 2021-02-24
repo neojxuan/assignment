@@ -78,3 +78,21 @@
   .my-margin{
     margin-left: 100px;
   }
+  .view.btn {
+    background-color: #006757FF;
+    color: #FFF;
+    border: none;
+    margin: 2px;
+  }
+  .edit.btn {
+    background-color: #40a19d;
+    color: #FFF;
+    border: none;
+    margin: 2px;
+  }
+  .delete.btn {
+    background-color: #e44b24;
+    color: #FFF;
+    border: none;
+    margin: 2px;
+  }

@@ -27,7 +27,7 @@ class Task extends React.Component {
       })
       .then(response => this.setState({ task: response }))
       .catch(() => this.props.history.push("/tasks"));
-    }
+  }
 
   addHtmlEntities(str) {
     return String(str)

@@ -52,7 +52,7 @@ class NewTask extends React.Component {
     event.preventDefault();
     const {location, match} = this.props;
     const path = location.pathname;
-    const url = `/api/v1/tag/${this.isPathEdit(path) ? `update/${match.params.id}` : 'create' }`;
+    const url = `/api/v1/tags/${this.isPathEdit(path) ? `update/${match.params.id}` : 'create' }`;
     const { name } = this.state;
   
     if (name.length == 0) {

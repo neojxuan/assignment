@@ -66,13 +66,13 @@ class Tasks extends React.Component {
           <div className="card-body">
             <h4>{task.title}</h4>
             <div className="float-right">
-              <Link to={`/task/${task.id}`} className="btn custom-button">
+              <Link to={`/task/${task.id}`} className="btn view">
                 View Task
               </Link>
-              <Link to={`/task/edit/${task.id}`} className="btn custom-button">
+              <Link to={`/task/edit/${task.id}`} className="btn edit">
                 Edit Task
               </Link>
-              <div className="btn custom-button" onClick={() => this.deleteTask(task.id)}>
+              <div className="btn delete" onClick={() => this.deleteTask(task.id)}>
                 Delete Task
               </div>
             </div>
