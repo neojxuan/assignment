@@ -122,10 +122,12 @@ class NewTask extends React.Component {
         console.log(this.state.all_tags);
         const arr_tags = this.state.all_tags;
         const display_tags = arr_tags.map((tag) => (
+          <div className="in-line-div">
             <Fragment>
               <input type="checkbox" id={tag.id} name={tag.id} value={tag.id} onChange={this.tagChange}/>
               <label for={tag.id} className="btn tag-button">{tag.name}</label>
             </Fragment>
+            </div>
           ));
         return (
           <div className="container mt-5">
@@ -159,13 +161,13 @@ class NewTask extends React.Component {
                       onChange={this.onChange}
                     />
                   </div>
-
+                  <div>Add Tags</div>
                   <div>{display_tags}</div>
 
                   <button type="submit" className="btn custom-button mt-3">
                     {`${this.isPathEdit(this.props.location.pathname) ? 'Update' : 'Create'} Task`}
                   </button>
-                  <Link to="/tasks" className="btn btn-link mt-3">
+                  <Link to="/tasks" className="btn back-button mt-3">
                     Back to tasks
                   </Link>
                 </form>

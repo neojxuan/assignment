@@ -132,20 +132,15 @@ class Search extends React.Component {
         <br></br>
         <p>
         <div className="container">
-          <button type="submit" className="btn custom-button" onClick={(e) => this.onSubmit(e)}>
+          <button type="submit" className="btn green3" onClick={(e) => this.onSubmit(e)}>
             Search
           </button>
-          <button type="button" className="btn custom-button" value="reload page" onClick={() => this.props.history.go(0)()}>Clear Search</button>
-        
+          <button type="button" className="btn delete" value="reload page" onClick={() => this.props.history.go(0)()}>Clear Search</button>
+          <Link to="/" className="btn home-button">
+              Home
+          </Link>
         </div>
         </p>
-        <div className="py-5">
-          <main className="container">
-            <Link to="/" className="btn btn-link">
-              Home
-            </Link>
-          </main>
-        </div>
       </>
     );
   }

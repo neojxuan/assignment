@@ -42,10 +42,10 @@
     opacity: 0.4;
   }
   .tag-button.btn {
-    background-color: #f0ea96;
+    /* background-color: #f0ea96; */
     color: rgb(3, 87, 21);
     border: none;
-    margin: 2px;
+    padding-left: 0.5em;
   }
   .green1.btn {
     background-color: #61B668;
@@ -76,7 +76,7 @@
     border-width: 3px;
   }
   .my-margin{
-    margin-left: 100px;
+    margin-left: 0px;
   }
   .view.btn {
     background-color: #006757FF;
@@ -92,6 +92,36 @@
   }
   .delete.btn {
     background-color: #e44b24;
+    color: #FFF;
+    border: none;
+    margin: 2px;
+  }
+  .in-line-div {
+    /* background-color: #f0ea96; */
+    display: inline-block;
+    margin-right: 1em;
+    border-radius: 10%;
+  }
+  .col-md-6 {
+    display: inline-block;
+  }
+  #width-auto {
+    width:auto;
+    padding-left:0px;
+  }
+  .home-button.btn {
+    color: #FFF;
+    background-color:rgb(77, 158, 224);
+    border: none;
+    margin: 2px;
+    float: left;
+  }
+  .max-width {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .back-button.btn {
+    background-color: #591e9cee;
     color: #FFF;
     border: none;
     margin: 2px;

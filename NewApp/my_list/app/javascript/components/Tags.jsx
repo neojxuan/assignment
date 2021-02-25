@@ -47,14 +47,14 @@ class Tags extends React.Component {
   render() {
     const { tags } = this.state;
     const allTags = tags.map((tag, index) => (
-      <div key={index} className="col-md-6 col-lg-4">
+      <div key={index} className="col-md-6 col-lg-4" id="width-auto">
         <div className="card mb-4">
           <div className="card-body">
             <h4 className="card-title">{tag.name}</h4>
-            <Link to={`/tag/edit/${tag.id}`} className="btn custom-button">
+            <Link to={`/tag/edit/${tag.id}`} className="btn edit">
               Edit Tag
             </Link>
-            <div className="btn custom-button" onClick={() => this.deleteTag(tag.id)}>
+            <div className="btn delete" onClick={() => this.deleteTag(tag.id)}>
               Delete Tag
             </div>
           </div>
@@ -72,21 +72,22 @@ class Tags extends React.Component {
     return (
       <>
         <section className="text-center">
-          <div className="container py-5">
+          <div className="max-width py-5">
             <h1 className="display-4">All Tags</h1>
           </div>
         </section>
+
         <div className="py-5">
-          <main className="container">
-            <div className="text-right mb-3">
+          <main className="max-width">
+            <div className="text-left mb-3"> 
+              <Link to="/" className="btn home-button">
+                Home
+              </Link>
               <Link to="/tag" className="btn custom-button">
                 Create New Tag
               </Link>
             </div>
               {tags.length > 0 ? allTags : noTag}
-            <Link to="/" className="btn btn-link">
-              Home
-            </Link>
           </main>
         </div>
       </>

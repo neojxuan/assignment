@@ -98,7 +98,11 @@ class Tasks extends React.Component {
         </section>
         <div className="py-5">
           <main className="container">
+            
             <div className="text-right mb-3">
+            <Link to="/" className="btn home-button text-left">
+              Home
+            </Link>
             <Link to="/tags" className="btn green1">
                 View All Tags
               </Link>
@@ -113,9 +117,7 @@ class Tasks extends React.Component {
               </Link>
             </div>
               {tasks.length > 0 ? allTasks : noTask}
-            <Link to="/" className="btn btn-link">
-              Home
-            </Link>
+
           </main>
         </div>
       </>
