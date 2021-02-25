@@ -80,10 +80,10 @@ class Tags extends React.Component {
         <div className="py-5">
           <main className="max-width">
             <div className="text-left mb-3"> 
-              <Link to="/" className="btn home-button">
-                Home
+              <Link to="/tasks" className="btn back-button">
+                Back to Tasks
               </Link>
-              <Link to="/tag" className="btn custom-button">
+              <Link to="/tag" className="btn green3">
                 Create New Tag
               </Link>
             </div>

@@ -96,13 +96,13 @@ class Search extends React.Component {
             <div className="card mb-4">
             <div className="card-body">
                 <h5 className="card-title">{task.title}</h5>
-                <Link to={`/task/${task.id}`} className="btn custom-button">
+                <Link to={`/task/${task.id}`} className="btn view">
                 View Task
                 </Link>
-                <Link to={`/task/edit/${task.id}`} className="btn custom-button">
+                <Link to={`/task/edit/${task.id}`} className="btn edit">
                 Edit Task
                 </Link>
-                <div className="btn custom-button" onClick={() => this.deleteTask(task.id)}>
+                <div className="btn delete" onClick={() => this.deleteTask(task.id)}>
                 Delete Task
                 </div>
             </div>
@@ -111,7 +111,7 @@ class Search extends React.Component {
         ));
 
     const noTask = (
-      <div className="my-margin mb-3 vw-100 vh-50 d-flex justify-content-center py-5">
+      <div className="my-margin vh-50 d-flex justify-content-center">
         <h4>
           No tasks selected yet.
         </h4>
@@ -128,19 +128,17 @@ class Search extends React.Component {
         <div className="container">
           {display_tags}
         </div>
-        <div>{this.state.tasks.length > 0 ? allTasks : noTask}</div>
+        <div className="task">{this.state.tasks.length > 0 ? allTasks : noTask}</div>
         <br></br>
-        <p>
         <div className="container">
           <button type="submit" className="btn green3" onClick={(e) => this.onSubmit(e)}>
             Search
           </button>
           <button type="button" className="btn delete" value="reload page" onClick={() => this.props.history.go(0)()}>Clear Search</button>
-          <Link to="/" className="btn home-button">
-              Home
+          <Link to="/tasks" className="btn back-button">
+              Back to Tasks
           </Link>
         </div>
-        </p>
       </>
     );
   }

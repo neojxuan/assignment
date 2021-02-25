@@ -164,11 +164,11 @@ class NewTask extends React.Component {
                   <div>Add Tags</div>
                   <div>{display_tags}</div>
 
-                  <button type="submit" className="btn custom-button mt-3">
+                  <button type="submit" className="btn green3 mt-3">
                     {`${this.isPathEdit(this.props.location.pathname) ? 'Update' : 'Create'} Task`}
                   </button>
                   <Link to="/tasks" className="btn back-button mt-3">
-                    Back to tasks
+                    Back to Tasks
                   </Link>
                 </form>
               </div>

@@ -121,8 +121,11 @@
     margin: 0 auto;
   }
   .back-button.btn {
-    background-color: #591e9cee;
+    background-color: #2d6192ee;
     color: #FFF;
     border: none;
     margin: 2px;
+  }
+  .task {
+    margin: 5%;
   }
